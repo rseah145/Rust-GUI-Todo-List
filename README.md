@@ -42,10 +42,13 @@ https://github.com/emilk/egui/discussions/2133
 3. build release  
 `cargo build --release --target x86_64-pc-windows-gnu`
 
+or download the release binary from Releases  
+
 # Linux setup instructions  
 
 Same steps for 1. and 2. from Windows setup
 
 3. build release  
-`cargo build --release`
+`cargo build --release`  
 
+or download the release binary from Releases  

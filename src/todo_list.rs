@@ -15,7 +15,6 @@ use std::{
 };
 use std::collections::HashMap;
 use uuid::Uuid;
-use egui::viewport::{IconData};
 
 const PADDING: f32 = 5.0;
 const BTN_PADDING: f32 = 20.0;
@@ -201,8 +200,8 @@ impl Todos {
                     .on_hover_text("Toggle todo status");
 
                 if chkbox.clicked() {
-                    println!("{}", todo_entry.is_done);
-                    println!("{}", todo_entry.is_done);
+                    //println!("{}", todo_entry.is_done);
+                    //println!("{}", todo_entry.is_done);
                 }
             });
             ui.add_space(PADDING);
