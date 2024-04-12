@@ -31,3 +31,21 @@ https://github.com/emilk/egui/discussions/2026
 https://github.com/emilk/egui/discussions/3971  
 
 https://github.com/emilk/egui/discussions/2133  
+
+# Windows setup instructions  
+
+1. clone the repo  
+
+2. add build target via rustup  
+`rustup target add x86_64-pc-windows-gnu`  
+
+3. build release  
+`cargo build --release --target x86_64-pc-windows-gnu`
+
+# Linux setup instructions  
+
+Same steps for 1. and 2. from Windows setup
+
+3. build release  
+`cargo build --release`
+
