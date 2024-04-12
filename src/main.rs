@@ -16,6 +16,7 @@ use std::path::MAIN_SEPARATOR;
 //mod todo_item;
 
 fn main() {
+    /* Need to figure out why it does not work as intended
     let icon_image = image::open("app_icon".to_owned() + &MAIN_SEPARATOR.to_string() + "to-do-list.png")
         .expect("test")
         .with_guessed_format()
@@ -30,12 +31,13 @@ fn main() {
         width,
         height,
     };
+    */
 
     let window_option = NativeOptions {
         follow_system_theme: false,
         default_theme: Theme::Dark,
-        viewport: ViewportBuilder::default()
-            .with_icon(icon),
+        //viewport: ViewportBuilder::default()
+        //    .with_icon(icon),
         ..Default::default()
     };
     let _ = run_native("Rust egui Todo-List", window_option, Box::new(|cc| Box::new(Todos::new(cc))));
