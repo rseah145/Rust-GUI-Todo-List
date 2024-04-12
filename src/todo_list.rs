@@ -48,7 +48,7 @@ impl Default for Todos {
     }
 }
 
-#[derive(Clone, Debug, Serialize, Deserialize)]
+#[derive(Clone, Debug, Serialize, Deserialize, PartialEq)]
 struct TodoEntry {
     title: String,
     desc: String,
@@ -196,12 +196,10 @@ impl Todos {
 
                 ui.add_space(BTN_PADDING);
 
-                let chkbox = ui.checkbox(&mut self.todo_list.get_mut(&uuid).unwrap().is_done, RichText::new("is done?").text_style(heading3()))
-                    .on_hover_text("Toggle todo status");
-
-                if chkbox.clicked() {
-                    //println!("{}", todo_entry.is_done);
-                    //println!("{}", todo_entry.is_done);
+                if self.todo_list.get_mut(&uuid.clone()) != None {
+                    let chkbox = ui.checkbox(&mut self.todo_list.get_mut(&uuid.clone()).unwrap().is_done, 
+                                            RichText::new("is done?").text_style(heading3()))
+                        .on_hover_text("Toggle todo status");
                 }
             });
             ui.add_space(PADDING);
