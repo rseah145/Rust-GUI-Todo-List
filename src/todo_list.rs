@@ -15,6 +15,7 @@ use std::{
 };
 use std::collections::HashMap;
 use uuid::Uuid;
+use egui::viewport::{IconData};
 
 const PADDING: f32 = 5.0;
 const BTN_PADDING: f32 = 20.0;
@@ -137,7 +138,7 @@ impl Todos {
     pub fn render_todo_entries(&mut self, ui: &mut eframe::egui::Ui, ctx: &egui::Context) {
         let todo_list_items = self.todo_list.clone();
 
-        for (uuid, mut todo_entry) in todo_list_items {
+        for (uuid, todo_entry) in todo_list_items {
             ui.add_space(PADDING);
 
             let title: String = format!("▶ {}", &todo_entry.title);
@@ -196,8 +197,13 @@ impl Todos {
 
                 ui.add_space(BTN_PADDING);
 
-                ui.checkbox(&mut todo_entry.is_done, RichText::new("is done?").text_style(heading3()))
+                let chkbox = ui.checkbox(&mut self.todo_list.get_mut(&uuid).unwrap().is_done, RichText::new("is done?").text_style(heading3()))
                     .on_hover_text("Toggle todo status");
+
+                if chkbox.clicked() {
+                    println!("{}", todo_entry.is_done);
+                    println!("{}", todo_entry.is_done);
+                }
             });
             ui.add_space(PADDING);
             ui.add(Separator::default());
@@ -412,8 +418,8 @@ impl eframe::App for Todos {
                         if self.selected_file != None {
                             self.save_operation = true;
                             self.save_only = true;
-                            println!("Saving current save file");
-                            println!("file path: {:?}", self.selected_file);
+                            //println!("Saving current save file");
+                            //println!("file path: {:?}", self.selected_file);
                         }
                         else {
                             toasts.add(Toast {

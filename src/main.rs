@@ -5,6 +5,9 @@ mod todo_list;
 
 use todo_list::Todos;
 use eframe::{run_native, NativeOptions, Theme};
+use egui::viewport::{ViewportBuilder, IconData};
+use image::io::Reader as image;
+use std::path::MAIN_SEPARATOR;
 
 // todo item module
 // using path attr to read a file (not recommended)
@@ -13,10 +16,27 @@ use eframe::{run_native, NativeOptions, Theme};
 //mod todo_item;
 
 fn main() {
-    //let test_todo = todo_item::TodoItemEntry { item_text: String::from("test"), item_desc: String::from("test2"), is_done: true };
-    //println!("{:?}", test_todo);
-    let mut win_option = NativeOptions::default();
-    win_option.follow_system_theme = false;
-    win_option.default_theme = Theme::Dark;
-    let _ = run_native("Rust egui Todo-List", win_option, Box::new(|cc| Box::new(Todos::new(cc))));
+    let icon_image = image::open("app_icon".to_owned() + &MAIN_SEPARATOR.to_string() + "to-do-list.png")
+        .expect("test")
+        .with_guessed_format()
+        .expect("test")
+        .decode()
+        .unwrap();
+    let width = icon_image.width();
+    let height = icon_image.height();
+    let icon_rgba8 = icon_image.into_rgb8().to_vec();
+    let icon = IconData {
+        rgba: icon_rgba8,
+        width,
+        height,
+    };
+
+    let window_option = NativeOptions {
+        follow_system_theme: false,
+        default_theme: Theme::Dark,
+        viewport: ViewportBuilder::default()
+            .with_icon(icon),
+        ..Default::default()
+    };
+    let _ = run_native("Rust egui Todo-List", window_option, Box::new(|cc| Box::new(Todos::new(cc))));
 }

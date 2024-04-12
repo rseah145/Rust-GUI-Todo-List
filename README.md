@@ -1,5 +1,9 @@
 # Todo list in Rust
 
+Attribution for app icon: https://www.flaticon.com/free-icon/to-do-list_3176366  
+
+Link to app icon download: <a href="https://www.flaticon.com/free-icons/to-do-list" title="to do list icons">To do list icons created by Freepik - Flaticon</a>  
+
 With references to the following:  
 
 https://www.youtube.com/watch?v=NtUkr_z7l84  
@@ -20,4 +24,10 @@ https://github.com/emilk/egui/blob/master/crates/egui_demo_lib/src/demo/widget_g
 
 https://github.com/appcove/egui.info/tree/master/examples/egui-215-todo-list  
 
+https://rodneylab.com/trying-egui/  
 
+https://github.com/emilk/egui/discussions/2026  
+
+https://github.com/emilk/egui/discussions/3971  
+
+https://github.com/emilk/egui/discussions/2133  
