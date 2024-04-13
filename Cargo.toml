@@ -9,7 +9,8 @@ edition = "2021"
 # Only saves the window size and other window properties upon closing/opening
 # Note that it stores the app state within some data dir i.e. AppData or .local/share/
 [dependencies]
-eframe = { version = "0.27.2", features = ["persistence"] }
+#eframe = { version = "0.27.2", features = ["persistence"] }
+eframe = "0.27.2"
 egui = "0.27.2"
 egui-toast = "0.13.0"
 egui_file = "0.17"
