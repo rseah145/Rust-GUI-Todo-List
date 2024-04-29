@@ -52,3 +52,10 @@ Same steps for 1. and 2. from Windows setup
 `cargo build --release`  
 
 or download the release binary from Releases  
+
+# Enabling persistence  
+
+Uncomment the eframe dependency within cargo.toml with persistence feature and comment out the efrane dependency that
+has no features  
+
+

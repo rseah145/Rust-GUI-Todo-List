@@ -5,9 +5,9 @@ mod todo_list;
 
 use todo_list::Todos;
 use eframe::{run_native, NativeOptions, Theme};
-use egui::viewport::{ViewportBuilder, IconData};
-use image::io::Reader as image;
-use std::path::MAIN_SEPARATOR;
+//use egui::viewport::{ViewportBuilder, IconData};
+//use image::io::Reader as image;
+//use std::path::MAIN_SEPARATOR;
 
 // todo item module
 // using path attr to read a file (not recommended)

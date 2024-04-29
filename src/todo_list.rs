@@ -196,8 +196,8 @@ impl Todos {
 
                 ui.add_space(BTN_PADDING);
 
-                if self.todo_list.get_mut(&uuid.clone()) != None {
-                    let chkbox = ui.checkbox(&mut self.todo_list.get_mut(&uuid.clone()).unwrap().is_done, 
+                if self.todo_list.get_mut(&uuid) != None {
+                    let _chkbox = ui.checkbox(&mut self.todo_list.get_mut(&uuid).unwrap().is_done, 
                                             RichText::new("is done?").text_style(heading3()))
                         .on_hover_text("Toggle todo status");
                 }
